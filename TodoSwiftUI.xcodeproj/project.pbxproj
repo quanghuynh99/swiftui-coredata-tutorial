@@ -18,10 +18,12 @@
 		DB88E6932CFAEF29002987F3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E6922CFAEF29002987F3 /* Order.swift */; };
 		DB88E6972CFAF37E002987F3 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB88E6952CFAF37E002987F3 /* Database.xcdatamodeld */; };
 		DB88E6992CFAF3E2002987F3 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E6982CFAF3E2002987F3 /* DatabaseController.swift */; };
-		DB88E69C2CFAF789002987F3 /* FoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E69B2CFAF789002987F3 /* FoodEntity.swift */; };
 		DB88E69F2CFB01DB002987F3 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E69E2CFB01DB002987F3 /* AddFood.swift */; };
 		DB88E6A12CFB0D83002987F3 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E6A02CFB0D83002987F3 /* FoodDetailView.swift */; };
 		DB88E6A32CFB14EF002987F3 /* EditFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88E6A22CFB14EF002987F3 /* EditFootView.swift */; };
+		DB8D0D6D2D02A3200058A95E /* TestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D6C2D02A3200058A95E /* TestLayout.swift */; };
+		DB8D0D722D02A4400058A95E /* TestLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */; };
+		DB8D0D752D02A5AB0058A95E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D742D02A5AB0058A95E /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +58,12 @@
 		DB88E6922CFAEF29002987F3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		DB88E6962CFAF37E002987F3 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		DB88E6982CFAF3E2002987F3 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
-		DB88E69B2CFAF789002987F3 /* FoodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntity.swift; sourceTree = "<group>"; };
 		DB88E69E2CFB01DB002987F3 /* AddFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFood.swift; sourceTree = "<group>"; };
 		DB88E6A02CFB0D83002987F3 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		DB88E6A22CFB14EF002987F3 /* EditFootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFootView.swift; sourceTree = "<group>"; };
+		DB8D0D6C2D02A3200058A95E /* TestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayout.swift; sourceTree = "<group>"; };
+		DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayoutViewModel.swift; sourceTree = "<group>"; };
+		DB8D0D742D02A5AB0058A95E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +152,11 @@
 		DB88E68F2CFAEA80002987F3 /* AppView */ = {
 			isa = PBXGroup;
 			children = (
+				DB8D0D732D02A5A40058A95E /* Setting */,
+				DB8D0D702D02A4310058A95E /* TestLayout */,
+				DB8D0D6F2D02A4290058A95E /* Order */,
+				DB8D0D6E2D02A4210058A95E /* Menu */,
 				DB88E6672CFAE874002987F3 /* MainView.swift */,
-				DB88E6902CFAEF09002987F3 /* Menu.swift */,
-				DB88E6922CFAEF29002987F3 /* Order.swift */,
 			);
 			path = AppView;
 			sourceTree = "<group>";
@@ -158,19 +164,10 @@
 		DB88E6942CFAF333002987F3 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				DB88E69A2CFAF77F002987F3 /* Entity */,
 				DB88E6952CFAF37E002987F3 /* Database.xcdatamodeld */,
 				DB88E6982CFAF3E2002987F3 /* DatabaseController.swift */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		DB88E69A2CFAF77F002987F3 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				DB88E69B2CFAF789002987F3 /* FoodEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		DB88E69D2CFB01D2002987F3 /* Modal */ = {
@@ -181,6 +178,39 @@
 				DB88E6A22CFB14EF002987F3 /* EditFootView.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		DB8D0D6E2D02A4210058A95E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DB88E6902CFAEF09002987F3 /* Menu.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DB8D0D6F2D02A4290058A95E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				DB88E6922CFAEF29002987F3 /* Order.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		DB8D0D702D02A4310058A95E /* TestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D0D6C2D02A3200058A95E /* TestLayout.swift */,
+				DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */,
+			);
+			path = TestLayout;
+			sourceTree = "<group>";
+		};
+		DB8D0D732D02A5A40058A95E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D0D742D02A5AB0058A95E /* Setting.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8D0D722D02A4400058A95E /* TestLayoutViewModel.swift in Sources */,
 				DB88E6912CFAEF09002987F3 /* Menu.swift in Sources */,
+				DB8D0D752D02A5AB0058A95E /* Setting.swift in Sources */,
+				DB8D0D6D2D02A3200058A95E /* TestLayout.swift in Sources */,
 				DB88E69F2CFB01DB002987F3 /* AddFood.swift in Sources */,
 				DB88E6A12CFB0D83002987F3 /* FoodDetailView.swift in Sources */,
 				DB88E6972CFAF37E002987F3 /* Database.xcdatamodeld in Sources */,
@@ -321,7 +354,6 @@
 				DB88E6992CFAF3E2002987F3 /* DatabaseController.swift in Sources */,
 				DB88E6682CFAE874002987F3 /* MainView.swift in Sources */,
 				DB88E6932CFAEF29002987F3 /* Order.swift in Sources */,
-				DB88E69C2CFAF789002987F3 /* FoodEntity.swift in Sources */,
 				DB88E6662CFAE874002987F3 /* TodoSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

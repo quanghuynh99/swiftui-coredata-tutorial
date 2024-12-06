@@ -4,7 +4,7 @@ import SwiftUI
 struct EditFoodView: View {
     @Environment(\.managedObjectContext) var moc
     @Binding var isPresented: Bool
-    var food: Food? // Thực thể food, không phải Binding
+    var food: Food?
 
     @State private var name: String
     @State private var foodDescription: String
