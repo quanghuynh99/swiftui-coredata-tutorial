@@ -152,11 +152,11 @@
 		DB88E68F2CFAEA80002987F3 /* AppView */ = {
 			isa = PBXGroup;
 			children = (
+				DB88E6672CFAE874002987F3 /* MainView.swift */,
 				DB8D0D732D02A5A40058A95E /* Setting */,
 				DB8D0D702D02A4310058A95E /* TestLayout */,
 				DB8D0D6F2D02A4290058A95E /* Order */,
 				DB8D0D6E2D02A4210058A95E /* Menu */,
-				DB88E6672CFAE874002987F3 /* MainView.swift */,
 			);
 			path = AppView;
 			sourceTree = "<group>";

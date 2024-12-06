@@ -20,6 +20,12 @@ struct MainView: View {
             }.tabItem {
                 Label("TestLayout", systemImage: "circle.hexagongrid.fill")
             }
+            
+            NavigationView {
+                Setting().navigationTitle("Setting").navigationBarTitleDisplayMode(.inline)
+            }.tabItem {
+                Label("Setting", systemImage: "gear")
+            }
         }
         .toolbar(.hidden, for: .automatic)
     }
