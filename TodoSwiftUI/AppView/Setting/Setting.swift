@@ -55,7 +55,6 @@ struct Setting: View {
                     }
                 }
             }
-
             Section {
                 NavigationLink(destination: Text("About")) {
                     HStack {

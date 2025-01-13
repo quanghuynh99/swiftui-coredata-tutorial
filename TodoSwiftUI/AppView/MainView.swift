@@ -14,13 +14,13 @@ struct MainView: View {
             }.tabItem {
                 Label("Order", systemImage: "square.and.pencil")
             }
-            
+
             NavigationView {
                 TestLayout().navigationTitle("TestLayout").navigationBarTitleDisplayMode(.inline)
             }.tabItem {
                 Label("TestLayout", systemImage: "circle.hexagongrid.fill")
             }
-            
+
             NavigationView {
                 Setting().navigationTitle("Setting").navigationBarTitleDisplayMode(.inline)
             }.tabItem {

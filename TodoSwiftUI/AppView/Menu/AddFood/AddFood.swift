@@ -4,19 +4,19 @@ import SwiftUI
 
 struct AddFood: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.managedObjectContext) private var moc
+    @StateObject private var viewModel: AddFoodViewModel
 
-    @State private var foodImage: UIImage? = nil
-    @State private var foodName: String = ""
-    @State private var foodDescription: String = ""
-    @State private var isPickerPresented: Bool = false
+    init() {
+        _viewModel = StateObject(wrappedValue: AddFoodViewModel())
+    }
 
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
                 // Food image
                 ZStack {
-                    if let image = foodImage {
+                    if let image = viewModel.foodImage {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
@@ -40,13 +40,13 @@ struct AddFood: View {
                     }
                 }
                 .onTapGesture {
-                    isPickerPresented = true
+                    viewModel.isPickerPresented = true
                 }
 
                 // Food name
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Food name").font(.headline)
-                    TextField("Enter food name", text: $foodName)
+                    TextField("Enter food name", text: $viewModel.foodName)
                         .padding()
                         .background(Color.gray.opacity(0.1))
                         .cornerRadius(8.0)
@@ -56,7 +56,7 @@ struct AddFood: View {
                 // Food description
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Description").font(.headline)
-                    TextField("Enter description", text: $foodDescription)
+                    TextField("Enter description", text: $viewModel.foodDescription)
                         .padding()
                         .background(Color.gray.opacity(0.1))
                         .cornerRadius(8)
@@ -65,17 +65,19 @@ struct AddFood: View {
 
                 // Add button
                 Button(action: {
-                    addFood()
+                    viewModel.addFood { _ in
+                        dismiss()
+                    }
                 }) {
                     Text("Add food")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.white)
-                        .background(foodName.isEmpty ? Color.gray : Color(uiColor: .systemBlue))
+                        .background(viewModel.foodName.isEmpty ? Color.gray : Color(uiColor: .systemBlue))
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
-                .disabled(foodName.isEmpty)
+                .disabled(viewModel.isAddButtonDisabled)
             }
             .padding()
             .navigationTitle("Add Food")
@@ -88,23 +90,11 @@ struct AddFood: View {
                 }
             }
         }
-        .sheet(isPresented: $isPickerPresented) {
-            ImagePicker(image: $foodImage)
+        .sheet(isPresented: $viewModel.isPickerPresented) {
+            ImagePicker(image: $viewModel.foodImage)
         }
-    }
-
-    private func addFood() {
-        let newFood = Food(context: moc)
-        newFood.id = UUID()
-        newFood.name = foodName
-        newFood.foodDescription = foodDescription
-        newFood.imageData = foodImage?.jpegData(compressionQuality: 1.0)
-
-        do {
-            try moc.save()
-            dismiss()
-        } catch {
-            print("Error saving food: \(error.localizedDescription)")
+        .onAppear {
+            viewModel.setup(moc: moc)
         }
     }
 }
@@ -146,8 +136,4 @@ struct ImagePicker: UIViewControllerRepresentable {
             }
         }
     }
-}
-
-#Preview {
-    AddFood()
 }

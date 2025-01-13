@@ -24,6 +24,7 @@
 		DB8D0D6D2D02A3200058A95E /* TestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D6C2D02A3200058A95E /* TestLayout.swift */; };
 		DB8D0D722D02A4400058A95E /* TestLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */; };
 		DB8D0D752D02A5AB0058A95E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D742D02A5AB0058A95E /* Setting.swift */; };
+		DB9428102D34CCF40061AF15 /* AddFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94280F2D34CCF40061AF15 /* AddFoodViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DB8D0D6C2D02A3200058A95E /* TestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayout.swift; sourceTree = "<group>"; };
 		DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayoutViewModel.swift; sourceTree = "<group>"; };
 		DB8D0D742D02A5AB0058A95E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		DB94280F2D34CCF40061AF15 /* AddFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +116,9 @@
 		DB88E6642CFAE874002987F3 /* TodoSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				DB88E69D2CFB01D2002987F3 /* Modal */,
+				DB88E6652CFAE874002987F3 /* TodoSwiftUIApp.swift */,
 				DB88E6942CFAF333002987F3 /* Database */,
 				DB88E68F2CFAEA80002987F3 /* AppView */,
-				DB88E6652CFAE874002987F3 /* TodoSwiftUIApp.swift */,
 				DB88E6692CFAE876002987F3 /* Assets.xcassets */,
 				DB88E66B2CFAE876002987F3 /* Preview Content */,
 			);
@@ -170,19 +171,12 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		DB88E69D2CFB01D2002987F3 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				DB88E69E2CFB01DB002987F3 /* AddFood.swift */,
-				DB88E6A02CFB0D83002987F3 /* FoodDetailView.swift */,
-				DB88E6A22CFB14EF002987F3 /* EditFootView.swift */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
 		DB8D0D6E2D02A4210058A95E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				DB94280E2D34CCDC0061AF15 /* FoodDetail */,
+				DB94280D2D34CCCA0061AF15 /* EditFood */,
+				DB94280C2D34CCBC0061AF15 /* AddFood */,
 				DB88E6902CFAEF09002987F3 /* Menu.swift */,
 			);
 			path = Menu;
@@ -211,6 +205,31 @@
 				DB8D0D742D02A5AB0058A95E /* Setting.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		DB94280C2D34CCBC0061AF15 /* AddFood */ = {
+			isa = PBXGroup;
+			children = (
+				DB88E69E2CFB01DB002987F3 /* AddFood.swift */,
+				DB94280F2D34CCF40061AF15 /* AddFoodViewModel.swift */,
+			);
+			path = AddFood;
+			sourceTree = "<group>";
+		};
+		DB94280D2D34CCCA0061AF15 /* EditFood */ = {
+			isa = PBXGroup;
+			children = (
+				DB88E6A22CFB14EF002987F3 /* EditFootView.swift */,
+			);
+			path = EditFood;
+			sourceTree = "<group>";
+		};
+		DB94280E2D34CCDC0061AF15 /* FoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DB88E6A02CFB0D83002987F3 /* FoodDetailView.swift */,
+			);
+			path = FoodDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +373,7 @@
 				DB88E6992CFAF3E2002987F3 /* DatabaseController.swift in Sources */,
 				DB88E6682CFAE874002987F3 /* MainView.swift in Sources */,
 				DB88E6932CFAEF29002987F3 /* Order.swift in Sources */,
+				DB9428102D34CCF40061AF15 /* AddFoodViewModel.swift in Sources */,
 				DB88E6662CFAE874002987F3 /* TodoSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

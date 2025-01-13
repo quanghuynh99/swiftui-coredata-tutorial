@@ -14,7 +14,7 @@ struct TestLayout: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.items) { item in
-                    RandomRow(item: item)
+                    TestRow(item: item)
                         .onAppear {
                             if item == viewModel.items.last {
                                 viewModel.loadMoreItems()
@@ -30,7 +30,7 @@ struct TestLayout: View {
     }
 }
 
-struct RandomRow: View {
+struct TestRow: View {
     let item: RandomItem
     var body: some View {
         HStack(spacing: 15) {
