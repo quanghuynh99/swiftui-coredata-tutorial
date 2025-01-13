@@ -4,32 +4,30 @@ import SwiftUI
 struct EditFoodView: View {
     @Environment(\.managedObjectContext) var moc
     @Binding var isPresented: Bool
-    var food: Food?
-
-    @State private var name: String
-    @State private var foodDescription: String
+    @StateObject private var viewModel: EditFootViewModel
+    private var food: Food?
 
     init(food: Food?, isPresented: Binding<Bool>) {
         self.food = food
+        _viewModel = .init(wrappedValue: EditFootViewModel())
         _isPresented = isPresented
-        _name = State(initialValue: food?.name ?? "")
-        _foodDescription = State(initialValue: food?.foodDescription ?? "")
     }
 
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Food Details")) {
-                    TextField("Name", text: $name)
-                    TextField("Description", text: $foodDescription)
+                    TextField("Name", text: $viewModel.name)
+                    TextField("Description", text: $viewModel.foodDescription)
                 }
-                
+
                 Section {
                     Button("Save") {
-                        saveFood()
+                        viewModel.saveFood()
+                        isPresented = false
                     }
-                    .disabled(name.isEmpty || foodDescription.isEmpty)
-                    
+                    .disabled(viewModel.name.isEmpty || viewModel.foodDescription.isEmpty)
+
                     Button("Cancel") {
                         isPresented = false
                     }
@@ -38,21 +36,13 @@ struct EditFoodView: View {
             }
             .navigationTitle("Edit Food")
             .navigationBarItems(trailing: Button("Done") {
+                viewModel.saveFood()
                 isPresented = false
             })
         }
-    }
-    
-    private func saveFood() {
-        if let food = food {
-            food.name = name
-            food.foodDescription = foodDescription
-            do {
-                try moc.save()
-                isPresented = false
-            } catch {
-                print("Failed to save changes: \(error)")
-            }
+        .onAppear {
+            viewModel.setup(moc: moc, food: food)
         }
     }
+
 }

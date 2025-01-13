@@ -25,6 +25,7 @@
 		DB8D0D722D02A4400058A95E /* TestLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */; };
 		DB8D0D752D02A5AB0058A95E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D0D742D02A5AB0058A95E /* Setting.swift */; };
 		DB9428102D34CCF40061AF15 /* AddFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94280F2D34CCF40061AF15 /* AddFoodViewModel.swift */; };
+		DB9428122D34EF220061AF15 /* EditFootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9428112D34EF220061AF15 /* EditFootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		DB8D0D712D02A4400058A95E /* TestLayoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayoutViewModel.swift; sourceTree = "<group>"; };
 		DB8D0D742D02A5AB0058A95E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DB94280F2D34CCF40061AF15 /* AddFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewModel.swift; sourceTree = "<group>"; };
+		DB9428112D34EF220061AF15 /* EditFootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				DB88E6A22CFB14EF002987F3 /* EditFootView.swift */,
+				DB9428112D34EF220061AF15 /* EditFootViewModel.swift */,
 			);
 			path = EditFood;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9428122D34EF220061AF15 /* EditFootViewModel.swift in Sources */,
 				DB8D0D722D02A4400058A95E /* TestLayoutViewModel.swift in Sources */,
 				DB88E6912CFAEF09002987F3 /* Menu.swift in Sources */,
 				DB8D0D752D02A5AB0058A95E /* Setting.swift in Sources */,

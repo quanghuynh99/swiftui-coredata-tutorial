@@ -3,7 +3,7 @@ import SwiftUI
 struct FoodDetailView: View {
     @Environment(\.dismiss) var dismiss
     var food: Food?
-    
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -21,7 +21,7 @@ struct FoodDetailView: View {
                             .frame(height: 200)
                             .foregroundColor(.gray)
                     }
-                    
+
                     Text(food.name ?? "Unknown")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -44,6 +44,5 @@ struct FoodDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .frame(maxHeight: .infinity)
-        
     }
 }

@@ -47,6 +47,7 @@ struct Menu: View {
                     } label: {
                         Label("Edit", systemImage: "pencil")
                     }
+                    .onTapGesture {}
                     .tint(.blue)
                 }
             }
@@ -64,8 +65,13 @@ struct Menu: View {
         .sheet(isPresented: $isPresentingAddFood) {
             AddFood()
         }
-        .sheet(isPresented: $isPresentingEditFood) {
-            EditFoodView(food: selectedFood, isPresented: $isPresentingEditFood)
+        .sheet(isPresented: Binding(
+            get: { isPresentingEditFood && selectedFood != nil },
+            set: { isPresentingEditFood = $0 }
+        )) {
+            if let selectedFood = selectedFood {
+                    EditFoodView(food: selectedFood, isPresented: $isPresentingEditFood)
+                }
         }
         .navigationDestination(for: Food.self) { food in
             FoodDetailView(food: food)
